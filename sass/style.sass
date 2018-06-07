@@ -1,0 +1,211 @@
+@import compass/reset
+@import compass/css3
+@import compass/layout
+@import compass/typography
+@import compass/css3/font-face
+@import compass/utilities
+@import "../node_modules/bootstrap/scss/bootstrap"
+@import "../node_modules/font-awesome/scss/font-awesome"
+@import '../node_modules/owl.carousel/src/scss/owl.carousel'
+
+// CONFIG
+$base-font-size: 16px !global
+$base-line-height: 24px !global
++establish-baseline
+
++font-face("Helvetica Neue", font-files("../fonts/HelveticaNeue/HelveticaNeue.ttf", "../fonts/HelveticaNeue/HelveticaNeue.woff"), "../fonts/HelveticaNeue/HelveticaNeue.eot", normal)
++font-face("Helvetica Neue", font-files("../fonts/HelveticaNeue-Bold/HelveticaNeue-Bold.ttf", "../fonts/HelveticaNeue-Bold/HelveticaNeue-Bold.woff"), "../fonts/HelveticaNeue-Bold/HelveticaNeue-Bold.eot", bold)
+
+
+//STYLE
+h3
+  +adjust-font-size-to(32px)
+  line-height: 1.2
+  font-weight: bold
+body
+  font-family: "Helvetica Neue", sans-serif
+  color: #000
+header
+  .header-section
+    padding-top: 50px
+    padding-bottom: 50px
+    box-shadow: inset 0 -1px 2px 1px rgba(0, 0, 0, 0.06)
+    background-color: #e9ecf3
+    .row
+      align-items: center
+    .logo
+      +adjust-font-size-to(40px)
+      line-height: 1
+      font-weight: bold
+      text-decoration: none
+      color: #000
+    .phone
+      display: block
+      +adjust-font-size-to(26px)
+      line-height: 1
+      font-weight: bold
+      text-shadow: 0 1px 0 #ffffff
+      color: #205f9c
+    .call
+      display: block
+      margin: 5px 0
+      +adjust-font-size-to(12px)
+      line-height: 1
+      text-shadow: 0 1px 0 #ffffff
+    .btn-search
+      position: relative
+      border: 1px solid #ced4da
+      border-left: 0
+      background-color: #fff
+      .fa
+        color: #d9d9d9
+      &:before
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        bottom: 0
+        margin: auto
+        height: 50%
+        width: 1px
+        background-color: #ced4da
+      &:focus
+        box-shadow: none
+        outline: none
+    .profile-section
+      padding: 10px 0
+      a
+        +adjust-font-size-to(12px)
+        line-height: 1
+        text-decoration: underline
+        color: #000
+        &:hover
+          text-decoration: none
+        &.sign-in
+          font-weight: bold
+  .top-menu
+    nav
+      width: 100%
+      height: 50px
+      margin-top: -25px
+      ul
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: space-around
+        flex-direction: row
+        background-color: #246aa5
+        background-image: linear-gradient(to top, rgba(14, 68, 116, 0.34) 0%, rgba(255, 255, 255, 0.34) 100%)
+        li
+          position: relative
+          height: 100%
+          width: 100%
+          flex-grow: 1
+          &:first-child
+            width: 40%
+          a
+            display: inline-block
+            height: 100%
+            width: 100%
+            +adjust-font-size-to(17px)
+            line-height: 45px
+            font-weight: bold
+            text-align: center
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.57)
+            color: #fff !important
+            .fa
+              font-size: 24px
+              line-height: inherit
+          &:after
+            content: ''
+            position: absolute
+            top: 0
+            bottom: 0
+            right: 0
+            margin: auto
+            height: 50%
+            width: 1px
+            background-color: #fff
+            opacity: 0.15
+          &:hover
+            background-color: rgba(#fff, 0.15)
+            a
+              text-decoration: none
+.slider
+  box-shadow: inset 0 -1px 2px 1px rgba(0, 0, 0, 0.06)
+  &-inner
+    padding: 45px 0 20px
+    .slider-item
+      .image-block
+        width: 100%
+      .slider-info
+        padding: 25px
+        .title-block
+          margin-bottom: 30px
+        a
+          +adjust-font-size-to(14px)
+          line-height: 1
+          color: #b8b8b8
+          &:hover
+            text-decoration: none
+    .owl-dots
+      padding: 25px 0
+      text-align: center
+      .owl-dot
+        width: 13px
+        height: 13px
+        border-radius: 50%
+        margin: 0 10px
+        border: 1px solid #e0e0e0
+        background-color: #eaeaea
+        &.active
+          background-image: linear-gradient(to top, #e2a03d, #f9d772)
+        &:focus
+          box-shadow: none
+          outline: none
+
+@media screen and (max-width: 992px)
+  h3
+    +adjust-font-size-to(24px)
+    line-height: 1.2
+  header
+    .header-section
+      .logo
+        +adjust-font-size-to(30px)
+        line-height: 1
+      .phone
+        +adjust-font-size-to(20px)
+        line-height: 1
+    .top-menu
+      nav
+        ul
+          li
+            a
+              +adjust-font-size-to(14px)
+              line-height: 45px
+
+@media screen and (max-width: 767px)
+  header
+    .header-section
+      .contact-section
+        margin: 10px 0
+    .top-menu
+      max-width: initial
+      nav
+        height: auto
+        ul
+          flex-direction: column
+          background-color: transparent
+          li
+            background-color: #246aa5
+            background-image: linear-gradient(to top, rgba(14, 68, 116, 0.14) 0%, rgba(255, 255, 255, 0.34) 100%)
+            &:first-child
+              width: 100%
+            &:hover
+              background-color: #246aa5
+              background-image: linear-gradient(to top, rgba(14, 68, 116, 0.14) 0%, rgba(255, 255, 255, 0.34) 100%)
+  .slider
+    &-inner
+      .slider-item
+        .image-block
+          display: none
